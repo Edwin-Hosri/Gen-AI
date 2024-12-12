@@ -44,7 +44,7 @@ def get_translation(keyNumber,text):
     model = MarianMTModel.from_pretrained(model_name)
 
     #pipeline setup
-    device = 0
+    device = 0 if torch.cuda.is_available() else -1
     transformer_pipeline = pipeline('translation',
                      model=model,
                      tokenizer=tokenizer,
