@@ -1,7 +1,7 @@
 # Generative AI projects
 ## Q&A Chatbot:
-    ### -Introduction: A chatbot that answers user queries based on predefined knowledge.
-    ### -Environement variable:
+    ### Introduction: A chatbot that answers user queries based on predefined knowledge.
+    ### Environement variable:
           1. Register/Login to HuggingFace.
           2. Generate HuggingFace Token.
           3. Apply permission to access Llama models(Meta).
@@ -13,8 +13,8 @@
                                                ""
 
 ## Translating Chatbot: 
-    ### -Introduction: A chatbot that translates text from english to multiple languages in real-time.
-    ### -Environement variable:
+    ### Introduction: A chatbot that translates text from english to multiple languages in real-time.
+    ### Environement variable:
           1. Register/Login to HuggingFace.
           2. Generate HuggingFace Token.
           3. Open Google colab.
