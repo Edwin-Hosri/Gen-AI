@@ -64,7 +64,10 @@ def get_translation(keyNumber,text):
                         template=template
                         )
 
-    llm_chain = LLMChain(prompt=prompt,llm=hf_pipeline)
+    llm_chain = LLMChain(
+                         prompt=prompt,
+                         llm=hf_pipeline
+                        )
 
     llm_chain.run({'text': input_text}) #the text is processed and translated
     translated_text = transformer_pipeline(text)[0]['translation_text'] #transformer_pipeline(text) returns a list of dictionaries.
