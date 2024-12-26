@@ -21,8 +21,8 @@ from langchain_huggingface import HuggingFacePipeline
 
 """HuggingFace Login Setup"""
 
-from google.colab import userdata
-userdata.get('HUGGING_FACE_HUB_TOKEN')
+from huggingface_hub import login
+login(token="YOUR_HUGGING_FACE_TOKEN")
 
 """Program Code"""
 
