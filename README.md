@@ -9,13 +9,11 @@ A chatbot that answers user queries based on predefined knowledge.
 1. Register/Login to HuggingFace.
 2. Generate HuggingFace Token.
 3. Apply permission to access Llama models (Meta).
-4. Open Google Colab.
-5. Create a new secret key:
-   - Give the key a name and paste the generated token string into the value's part.
-6. Import the key from Google Colab:
+4. Open Google Colab and paste the code.
+5. Import login from huggingface_hub and add your token in the string:
    ```python
-   from google.colab import userdata
-   userdata.get('Name_of_ur_key')
+   from huggingface_hub import login
+   login(token="YOUR_HUGGING_FACE_TOKEN")
 
 
 ## Translating Chatbot
@@ -26,13 +24,11 @@ A chatbot that translates text from English to multiple languages in real-time.
 ### Environment Variable
 1. Register/Login to HuggingFace.
 2. Generate HuggingFace Token.
-3. Open Google Colab.
-4. Create a new secret key:
-   - Give the key a name and paste the generated token string into the value's part.
-5. Import the key from Google Colab:
+3. Open Google Colab and paste the code.
+4. Import login from huggingface_hub and add your token in the string:
    ```python
-   from google.colab import userdata
-   userdata.get('Name_of_ur_key')
+   from huggingface_hub import login
+   login(token="YOUR_HUGGING_FACE_TOKEN")
 
 
 ## IMPORTANT: These Programs should run on Google colab. 
