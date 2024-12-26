@@ -19,9 +19,8 @@ import os
 
 """HuggingFace login setup"""
 
-from google.colab import userdata
-userdata.get('HUGGING_FACE_HUB_TOKEN')
-#Private HF loggin token retrieval
+from huggingface_hub import login
+login(token="YOUR_HUGGING_FACE_TOKEN")
 
 models={
     "1": "Helsinki-NLP/opus-mt-en-es", #spanish
