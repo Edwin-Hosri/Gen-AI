@@ -26,7 +26,7 @@ from langchain.vectorstores import FAISS #loading FAISS from langchain and not d
 #from langchain.schema import Document
 
 from huggingface_hub import login
-login(token="Your_Hugging_Face_Token")
+login(token="YOUR_HUGGING_FACE_TOKEN")
 
 """Typical Workflow
 
