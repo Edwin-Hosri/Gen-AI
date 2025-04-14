@@ -74,7 +74,7 @@ agent = initialize_agent(
 
 while True:
     user_input = input("Client Question: ")
-    if user_input.lower() in ["exit", "quit", "q"]:
+    if user_input.lower() in ["exit", "quit"]:
         print("Terminated")
         break
     try:
