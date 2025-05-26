@@ -26,6 +26,8 @@ model_name = "google/pegasus-xsum"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 loaded_model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
+
+#more efficient way to do the same thing when it comes to configurations
 """
 pipe = pipeline("summarization",
                 model=loaded_model, 
@@ -37,9 +39,6 @@ pipe = pipeline("summarization",
                 )
 """
 
-#more efficient way to do the same thing when it comes to configurations
-
-
 pipe = pipeline(
     "summarization",
     model=loaded_model,
@@ -47,7 +46,9 @@ pipe = pipeline(
     device= 0 if cuda.is_available() else -1,
     **GENERATION_CONFIG
 )
-#The ** syntax in Python is called dictionary unpacking (or sometimes "keyword argument unpacking").It allows you to pass all key-value pairs in a dictionary as named arguments to a function. (exactly similar to the first commented out pipeline initialization)
+#The ** syntax in Python is called dictionary unpacking (or sometimes "keyword argument unpacking").
+#It allows you to pass all key-value pairs in a dictionary as named arguments to a function. 
+#exactly similar to the first commented out pipeline initialization
 
 pipeline = HuggingFacePipeline(
     pipeline = pipe,
@@ -62,7 +63,9 @@ prompt = PromptTemplate(
 )
 
 chain = prompt | pipeline 
-#this is the same as LLMChain(llm = pipeline, prompt = prompt) ORDER MATTERS, we pass prompt first and then pipeline because we want to pass the input to the prompt first and then the prompt to the pipeline
+#this is the same as LLMChain(llm = pipeline, prompt = prompt) ORDER MATTERS 
+#we pass prompt first and then pipeline because we want to pass the input to the prompt first and then the prompt to the pipeline
+#LLMChain is decapricated in langchain newer versions so its recommended to use thos technique
 
 
 if __name__ == "__main__":
